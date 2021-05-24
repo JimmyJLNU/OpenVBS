@@ -1,18 +1,3 @@
-' ScriptCryptor Project Options Begin
-' HasVersionInfo: No
-' Companyname: 
-' Productname: 
-' Filedescription: 
-' Copyrights: 
-' Trademarks: 
-' Originalname: 
-' Comments: 
-' Productversion:  0. 0. 0. 0
-' Fileversion:  0. 0. 0. 0
-' Internalname: 
-' Appicon: 
-' AdministratorManifest: No
-' ScriptCryptor Project Options End
 on error resume next
 Private Const BITS_TO_A_BYTE = 8 
 Private Const BYTES_TO_A_WORD = 4 
@@ -374,4 +359,4 @@ d = AddUnsigned(d, DD)
 Next 
 
 MD5 = LCase(WordToHex(a) & WordToHex(b) & WordToHex(c) & WordToHex(d)) 
-End Function 
+End Function
