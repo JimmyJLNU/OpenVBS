@@ -1,12 +1,12 @@
-ext_id=inputbox("Microsoft Edge æ’ä»¶ä¸‹è½½å™¨" &vbCrlf&"" &vbCrlf&"è¯¥å°å·¥å…·å¯ä»¥ä»ç›´æ¥ä»å¾®è½¯å®˜æ–¹æ’ä»¶å•†åº—ä¸‹è½½æ’ä»¶ï¼ˆ.crxï¼‰ï¼Œå°†ç¦»çº¿æ’ä»¶æ‹–æ‹½åˆ°æ‰©å±•ç®¡ç†é¡µé¢ï¼ˆedge://extensions/ï¼‰å³å¯ç›´æ¥å®‰è£…ï¼"& vbCrLf&""& vbCrLf& "è¯·è¾“å…¥æ’ä»¶IDå·ï¼š" ,"Microsoft Edge æ’ä»¶ä¸‹è½½å™¨")
+ext_id=inputbox("Microsoft Edge ²å¼şÏÂÔØÆ÷" &vbCrlf&"" &vbCrlf&"¸ÃĞ¡¹¤¾ß¿ÉÒÔ´ÓÖ±½Ó´ÓÎ¢Èí¹Ù·½²å¼şÉÌµêÏÂÔØ²å¼ş£¨.crx£©£¬½«ÀëÏß²å¼şÍÏ×§µ½À©Õ¹¹ÜÀíÒ³Ãæ£¨edge://extensions/£©¼´¿ÉÖ±½Ó°²×°£¡"& vbCrLf&""& vbCrLf& "ÇëÊäÈë²å¼şIDºÅ£º" ,"Microsoft Edge ²å¼şÏÂÔØÆ÷")
 If ext_id=vbEmpty Then
 wscript.quit
 Else currentpath = createobject("Scripting.FileSystemObject").GetFile(Wscript.ScriptFullName).ParentFolder.Path
 Set Post = CreateObject("Msxml2.ServerXMLHTTP")
 Set Shell = CreateObject("Wscript.Shell")
 extid=ext_id
-msgbox "æ’ä»¶æ­£åœ¨åå°ä¸‹è½½ä¸­ï¼Œè¯·ç¨å€™ï¼" &vbCrlf&"" &vbCrlf& "ä¸‹è½½åçš„æ–‡ä»¶å°†ä¿å­˜åˆ°å½“å‰ç›®å½•ä¸‹ã€‚" ,vbOKOnly+vbInformation,"Microsoft Edge æ’ä»¶ä¸‹è½½å™¨" 
-Post.Open "GET","https://jimmyjlnu.herokuapp.com/proxy/https://edge.microsoft.com/extensionwebstorebase/v1/crx?response=redirect&prod=chromiumcrx&prodchannel=&x=id%3D"&extid&"%26installsource%3Dondemand%26uc",0
+msgbox "²å¼şÕıÔÚºóÌ¨ÏÂÔØÖĞ£¬ÇëÉÔºò£¡" &vbCrlf&"" &vbCrlf& "ÏÂÔØºóµÄÎÄ¼ş½«±£´æµ½µ±Ç°Ä¿Â¼ÏÂ¡£" ,vbOKOnly+vbInformation,"Microsoft Edge ²å¼şÏÂÔØÆ÷" 
+Post.Open "GET","http://jimmyjlnu.herokuapp.com/proxy/https://edge.microsoft.com/extensionwebstorebase/v1/crx?response=redirect&prod=chromiumcrx&prodchannel=&x=id%3D"&extid&"%26installsource%3Dondemand%26uc",0
 Post.Send
 Set aGet = CreateObject("ADODB.Stream")
 aGet.Mode = 3
@@ -14,5 +14,5 @@ aGet.Type = 1
 aGet.Open() 
 aGet.Write(Post.responseBody)
 aGet.SaveToFile currentpath &"\"&extid&".crx",2
-msgbox "æ’ä»¶ä¸‹è½½æˆåŠŸï¼" &vbCrlf&"" &vbCrlf& "ä¸‹è½½åçš„æ–‡ä»¶å·²ç»ä¿å­˜åˆ°å½“å‰ç›®å½•ä¸‹ã€‚" ,vbOKOnly+vbInformation,"Microsoft Edge æ’ä»¶ä¸‹è½½å™¨" 
+msgbox "²å¼şÏÂÔØ³É¹¦£¡" &vbCrlf&"" &vbCrlf& "ÏÂÔØºóµÄÎÄ¼şÒÑ¾­±£´æµ½µ±Ç°Ä¿Â¼ÏÂ¡£" ,vbOKOnly+vbInformation,"Microsoft Edge ²å¼şÏÂÔØÆ÷" 
 end if
