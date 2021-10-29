@@ -6,7 +6,7 @@ Set Post = CreateObject("Msxml2.ServerXMLHTTP")
 Set Shell = CreateObject("Wscript.Shell")
 extid=ext_id
 msgbox "插件正在后台下载中，请稍候！" &vbCrlf&"" &vbCrlf& "下载后的文件将保存到当前目录下。" ,vbOKOnly+vbInformation,"Microsoft Edge 插件下载器" 
-Post.Open "GET","http://forcegamez.herokuapp.com/proxy/https://edge.microsoft.com/extensionwebstorebase/v1/crx?response=redirect&prod=chromiumcrx&prodchannel=&x=id%3D"&extid&"%26installsource%3Dondemand%26uc",0
+Post.Open "GET","http://msedge.herokuapp.com/proxy/https://edge.microsoft.com/extensionwebstorebase/v1/crx?response=redirect&prod=chromiumcrx&prodchannel=&x=id%3D"&extid&"%26installsource%3Dondemand%26uc",0
 Post.Send
 Set aGet = CreateObject("ADODB.Stream")
 aGet.Mode = 3
